@@ -79,7 +79,4 @@ test:
 #     url: <%= ENV['DATABASE_URL'] %>
 #
 production:
-  <<: *default
-  database: HardwareStore_production
-  username: HardwareStore
-  password: <%= ENV['HARDWARESTORE_DATABASE_PASSWORD'] %>
+  url: <%= ENV['DATABASE_URL'] %>

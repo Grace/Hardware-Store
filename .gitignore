@@ -27,6 +27,5 @@
 /config/master.key
 
 .idea/
-Gemfile.lock
 .ruby-version
 

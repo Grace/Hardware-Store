@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @hardware.name %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @hardware.description %>
+</p>
+
+<p>
+  <strong>Category:</strong>
+  <%= @hardware.category %>
+</p>
+
+<p>
+  <strong>Price:</strong>
+  <%= @hardware.price %>
+</p>
+
+<p>
+  <strong>Currency:</strong>
+  <%= @hardware.currency %>
+</p>
+
+<%= link_to 'Edit', edit_hardware_path(@hardware) %> |
+<%= link_to 'Back', hardwares_path %>

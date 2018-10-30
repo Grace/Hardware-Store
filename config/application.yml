@@ -1,0 +1,19 @@
+# TODO: Figaro uses this file to load env variables, similar to dotenv. Remove later if not needed.
+# The advantage of this is it's attractive and organized into environments, though that goes against the
+# 12 Factor App guidelines.
+
+development:
+  app_name: ~
+  stripe_secret_key: 'sk_test_qXmQjMoffmEbNfbSJHkluciP'
+
+test:
+  app_name: ~
+  stripe_secret_key: 'sk_test_qXmQjMoffmEbNfbSJHkluciP'
+
+staging:
+  app_name: 'sleepy-chamber-97888' # Heroku app name
+  stripe_secret_key: 'sk_test_qXmQjMoffmEbNfbSJHkluciP'
+
+production:
+  app_name: 'hardware-shop' # Heroku app name
+  stripe_secret_key: 'sk_test_qXmQjMoffmEbNfbSJHkluciP' # In real production, this would be the Stripe production (public) key and not the test (secret) key #

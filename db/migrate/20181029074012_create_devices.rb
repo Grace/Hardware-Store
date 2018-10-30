@@ -1,10 +1,14 @@
 class CreateDevices < ActiveRecord::Migration[5.2]
   def change
-    create_table :devices do |t|
+    enable_extension 'pgcrypto' unless extension_enabled?('pgcrypto')
+    create_table :devices, id: :uuid, default: 'gen_random_uuid()' do |t|
       t.string :name
-      t.decimal :price
-      t.references :order
+      t.money :price
+      t.references :user, index: true
+      t.references :order, index: true
+      t.references :hardware, index: true
       t.timestamps
+
     end
   end
 end

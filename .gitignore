@@ -30,3 +30,10 @@
 .env
 .ruby-version
 .vscode/
+/config/application.yml
+/public/packs
+/public/packs-test
+/node_modules
+yarn-debug.log*
+.yarn-integrity
+erd.pdf

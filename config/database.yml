@@ -23,16 +23,16 @@ default: &default
 
 development:
   <<: *default
-  database: HardwareStore_development
+  database: <%= ENV['LOCAL_DEVELOPMENT_DB'] %>
 
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.
   # When left blank, postgres will use the default role. This is
   # the same name as the operating system user that initialized the database.
-  username: HardwareStore
+  username: <%= ENV['LOCAL_DEVELOPMENT_DB_ACCOUNT'] %>
 
   # The password associated with the postgres role (username).
-  password: 'hardware'
+  password: <%= ENV['LOCAL_DEVELOPMENT_DB_PASSWORD'] %>
 
   # Connect on a TCP socket. Omitted by default since the client uses a
   # domain socket that doesn't need configuration. Windows does not have
@@ -57,7 +57,9 @@ development:
 # Do not set this db to the same as development or production.
 test:
   <<: *default
-  database: HardwareStore_test
+  database: <%= ENV['LOCAL_TEST_DB_NAME'] %>
+  username: <%= ENV['LOCAL_TEST_DB_ACCOUNT'] %>
+  password: <%= ENV['LOCAL_TEST_DB_PASSWORD'] %>
 
 staging:
   url: <%= ENV['DATABASE_URL'] %>
